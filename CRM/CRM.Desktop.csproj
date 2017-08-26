@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3D8BDAF-5A92-4F99-8D36-8C5DF110330B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CRM</RootNamespace>
+    <AssemblyName>CRM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Presenter\AddClientPresenter.cs" />
+    <Compile Include="Presenter\AddProjectPresenter.cs" />
+    <Compile Include="Presenter\ClientPresenter.cs" />
+    <Compile Include="Presenter\AddContactPresenter.cs" />
+    <Compile Include="Presenter\ContactPresenter.cs" />
+    <Compile Include="Presenter\Presenter.cs" />
+    <Compile Include="Presenter\ProjectPresenter.cs" />
+    <Compile Include="Views\Forms\FAddContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FAddContact.Designer.cs">
+      <DependentUpon>FAddContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FaddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FaddProject.Designer.cs">
+      <DependentUpon>FaddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FClients.Designer.cs">
+      <DependentUpon>FClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FAddClient.Designer.cs">
+      <DependentUpon>FAddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FUpdateContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FUpdateContact.Designer.cs">
+      <DependentUpon>FUpdateContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FUpdateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FUpdateProject.Designer.cs">
+      <DependentUpon>FUpdateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\IAddProjectView.cs" />
+    <Compile Include="Views\IClientView.cs" />
+    <Compile Include="Views\IContactView.cs" />
+    <Compile Include="Views\IProjectView.cs" />
+    <Compile Include="Views\IClientAddView.cs" />
+    <Compile Include="Views\IContactAddView.cs" />
+    <Compile Include="Views\IView.cs" />
+    <EmbeddedResource Include="Views\Forms\FAddContact.resx">
+      <DependentUpon>FAddContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FaddProject.resx">
+      <DependentUpon>FaddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FClients.resx">
+      <DependentUpon>FClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FAddClient.resx">
+      <DependentUpon>FAddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FUpdateContact.resx">
+      <DependentUpon>FUpdateContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FUpdateProject.resx">
+      <DependentUpon>FUpdateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CRM.Data.EF\CRM.Data.EF.csproj">
+      <Project>{3905d4d7-76ba-4990-a263-2f5fb0fc6ae3}</Project>
+      <Name>CRM.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Data.Interfaces\CRM.Data.Interfaces.csproj">
+      <Project>{35b3f771-e98f-423a-92b4-b4c646c337bc}</Project>
+      <Name>CRM.Data.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj">
+      <Project>{708E1C4A-DA23-4863-AAB8-3E4CC1B379EB}</Project>
+      <Name>CRM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Services\CRM.Services.csproj">
+      <Project>{f6dba698-fc50-4b6d-b0c7-afeb71915992}</Project>
+      <Name>CRM.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
